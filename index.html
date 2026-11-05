@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- The bootstrap CSS file... cdn stand for content delivery network-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Stuff</title>
+  </head>
+  <body>
+    <!-- bootstrap work by adding classes to html
+     for exemple, break points (xs, s, m, lg, 2xl) 
+     background 'bg'
+     foreground 'fg' for text-->
+    <div class="lg:container bg-primary fg-contrast-primary">
+      <header>
+        <h1>New Bootstrap 6!</h1>
+      </header>
+
+      <main>
+        <!-- try a bootstrap component - a "drawer" - by
+         copying the code from bootstrap and tweaking it..
+         https://getbootstrap.com/docs/6.0/components/drawer/ -->
+        <button
+          type="button"
+          class="btn-solid theme-accent"
+          commandfor="invokerDrawer"
+          command="show-modal"
+        >
+          Open drawer
+        </button>
+
+        <dialog
+          class="drawer drawer-start"
+          tabindex="-1"
+          id="invokerDrawer"
+          aria-labelledby="invokerDrawerLabel"
+        >
+          <div class="drawer-header">
+            <h5 class="drawer-title" id="invokerDrawerLabel">
+              Invoker Commands
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              commandfor="invokerDrawer"
+              command="close"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="drawer-body">
+            <p>
+              This drawer opens with <code>command="show-modal"</code> and
+              closes with <code>command="close"</code>. No Bootstrap JavaScript
+              is involved.
+            </p>
+          </div>
+        </dialog>
+        <div class="form-field">
+          <label for="fieldSelect" class="form-label">Country</label>
+          <select class="form-control" id="fieldSelect">
+            <option selected>Choose one…</option>
+            <option value="1">United States</option>
+            <option value="2">Canada</option>
+            <option value="3">United Kingdom</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <input type="checkbox" id="fieldCheck" class="check" />
+          <label for="fieldCheck">Remember me</label>
+        </div>
+        <label class="form-control form-adorn">
+          <span class="form-adorn-text" aria-hidden="true">$</span>
+          <input type="text" class="form-ghost" placeholder="0.00" />
+        </label>
+        <label class="form-control form-adorn form-adorn-end">
+          <span class="form-adorn-text" aria-hidden="true">USD</span>
+          <input type="text" class="form-ghost" placeholder="Amount" />
+        </label>
+        <label class="form-control form-adorn">
+          <span class="form-adorn-text" aria-hidden="true">https://</span>
+          <input type="text" class="form-ghost" placeholder="example.com" />
+        </label>
+        <label class="form-control form-adorn form-adorn-end">
+          <span class="form-adorn-text" aria-hidden="true">@example.com</span>
+          <input type="text" class="form-ghost" placeholder="username" />
+        </label>
+      </main>
+
+      <section>
+        <!-- bootstrap's grid!
+         the grid is a 12-col grid (which you can set columns
+         to be diffrent sizes around)
+         p-3 is padding - 0.5em - you can have padding classes
+         and margin classes (ie.m-8)-->
+        <div class="row bg-danger fg-contrast-danger">
+          <div class="md:col-8 p-3">1 column</div>
+          <div class="md:col p-3">2 column</div>
+          <div class="md:col p-3">3 column</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- bootstrap javascript file-->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
